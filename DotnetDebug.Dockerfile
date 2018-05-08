@@ -7,6 +7,7 @@ RUN apt-get update \
   && echo "root:Docker!" | chpasswd
 #Copy settings file. See elsewhere to find them. 
 COPY sshd_config /etc/ssh/sshd_config
+COPY authorized_keys  root/.ssh/authorized_keys
 
 # Install Visual Studio Remote Debugger
 RUN apt-get install zip unzip
