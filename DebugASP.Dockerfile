@@ -14,8 +14,12 @@ RUN dotnet publish -c Debug -o /app
 
 FROM base AS final
 COPY --from=publish /app /app
+COPY ./StartSSHAndApp.sh /app
 
 EXPOSE 5000
 
-#CMD ./StartSSHApp.sh
-CMD ["/usr/sbin/sshd", "-D"]
+CMD /app/StartSSHAndApp.sh
+#If you wish to only have SSH running and start 
+#your service when you start debugging
+#then use just the SSH server, you don't need the script
+#CMD ["/usr/sbin/sshd", "-D"]

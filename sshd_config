@@ -13,4 +13,5 @@ SyslogFacility             DAEMON
 PasswordAuthentication    yes
 PermitEmptyPasswords      no
 PermitRootLogin     yes
+# Nessesary for VS2017, but not for VSCode!
 Subsystem sftp internal-sftp
