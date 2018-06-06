@@ -41,6 +41,36 @@
             "type": "coreclr",
             "request": "attach",
             "processId": "${command:pickProcess}"
+        },
+        {
+            "name": ".NET Core Remote Attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickRemoteProcess}",
+            "pipeTransport":
+            {
+                "debuggerPath": "~/vsdbg/vsdbg",
+                "pipeCwd": "${workspaceFolder}",
+
+                "windows": {
+                    "pipeProgram": "plink.exe",
+                    "pipeArgs": [ "-l", "root", "-pw", "Docker!", "localhost", "-P", "2222", "-T" ],
+                    "quoteArgs": true
+                },
+                "osx": {
+                    "pipeProgram": "ssh",
+                    "pipeArgs": [ "root@localhost:2222" ],
+                    "quoteArgs": true
+                }, 
+                "linux": {
+                    "pipeProgram": "ssh",
+                    "pipeArgs": [ "root@localhost:2222" ],
+                    "quoteArgs": true
+                }
+            },
+            "sourceFileMap": {
+                "/src": "${workspaceFolder}",
+            }
         }
     ,]
 }

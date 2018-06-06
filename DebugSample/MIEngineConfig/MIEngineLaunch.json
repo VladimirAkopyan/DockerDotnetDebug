@@ -1,7 +1,7 @@
 {
   "version": "0.2.0",
   "adapter": "plink.exe",
-  "adapterArgs": "-l root -pw Docker! 52.136.224.198 -P 2222 -batch -T ~/vsdbg/vsdbg --interpreter=vscode",
+  "adapterArgs": "-l root -pw Docker! localhost -P 2222 -batch -T ~/vsdbg/vsdbg --interpreter=vscode",
   "languageMappings": {
     "C#": {
       "languageId": "3F5162F8-07C6-11D3-9053-00C04FA302A1",
