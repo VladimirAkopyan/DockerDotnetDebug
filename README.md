@@ -10,6 +10,7 @@ A remotely debuggable docker container, use it as your base runtime in desperate
 4. Setup a remote connection over SSH
 5. Set a breakpoint in `DebugSample/Pages/Index.cshtml.cs`
 6. Start debugger and reload page! 
+
 ![Debugging In Action](Images/DebuggingInAction.png "Debugging In Action")
 
 Alternatively, debug this container while it's running on a kubernetes cluster using 
